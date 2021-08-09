@@ -1,0 +1,115 @@
+﻿@model Performance.Models.Perform
+
+@{
+    ViewBag.Title = "Edit";
+}
+    <script src="~/Scripts/jquery-3.4.1.js"></script>
+<h3>Edit Employee Performance</h3>
+<script type="text/javascript">
+    function Calculate() {
+        debugger;
+        var Workingdays = $('#workingid').val();
+        var Present = $('#presentid').val();
+        var Percentage = (Present / Workingdays) * 100;
+        $('#percentagetag').val(Percentage);
+    }
+</script>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <hr />
+    <div class="form-horizontal">
+       
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.EmpID, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DisplayFor((model) => model.EmpID)
+                @Html.HiddenFor((model) => model.EmpID)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Designation, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.Designation, new List<SelectListItem>
+                {
+                    new SelectListItem{Text ="--Select--",Value ="--Select--"},
+                    new SelectListItem{Text ="Software Developer",Value ="Software Developer"},
+                    new SelectListItem{Text ="Software Tester",Value ="Software Tester"},
+                    new SelectListItem{Text ="Quality Tester",Value ="Quality Tester"},
+                    new SelectListItem{Text ="Junior Engineer",Value ="Junior Engineer"},
+                    new SelectListItem{Text ="Team Lead",Value ="Team Lead"}
+                }, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(x => x.Designation, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Workingdays, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Workingdays, new { htmlAttributes = new { @class = "form-control", @id = "workingid" } })
+                @Html.ValidationMessageFor(model => model.Workingdays, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Present, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Present, new { htmlAttributes = new { @class = "form-control", @id = "presentid" } })
+                @Html.ValidationMessageFor(model => model.Present, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Calculate" class="btn btn-warning" onclick="Calculate()" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Percentage, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Percentage, new { htmlAttributes = new { @class = "form-control", @id = "percentagetag" } })
+                @Html.ValidationMessageFor(model => model.Percentage, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    </div>
+}
+<hr />
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+<style type="text/css">
+    h3 {
+        height: 30px;
+        width: 100%;
+        text-align: center;
+    }
+
+    .form-group {
+        padding: 8px;
+        width: 250%
+    }
+
+    .form-horizontal {
+        border: 2px solid gray;
+        /*border-width: 100%;*/
+        width: 100%;
+        border-radius: 20px;
+        background-color: #CCFFCC;
+    }
+</style>

@@ -1,0 +1,39 @@
+﻿@model ERP.Models.PaySlip
+
+@{
+    ViewBag.Title = "showPaySlip";
+}
+<html>
+<body>
+    <h2>PaySlip</h2>
+    <p>
+        @Html.ActionLink("Go to main", "EmpDetail")
+    </p>
+
+    <div>
+        <table border="1" width="100%">
+            <tr>
+                <th>EmpID</th>
+                <th>Total Allowance</th>
+                <th>Total Deduction</th>
+                <th>Basic Pay</th>
+                <th>Total Salary in PAYSLIP</th>
+            </tr>
+
+
+            <tr>
+                <td>@Model.EmpID</td>
+                <td>@Model.Allowance</td>
+                <td>@Model.Deduction</td>
+                <td>@Model.GrossSalary</td>
+                <td>@Model.TotalSalary</td>
+
+
+
+
+            </tr>
+
+        </table>
+    </div>
+</body>
+</html>

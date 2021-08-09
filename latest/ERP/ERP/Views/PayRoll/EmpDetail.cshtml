@@ -1,0 +1,71 @@
+﻿@model List<ERP.Models.Employee>
+@using System.Data;
+@{
+    ViewBag.Title = "EmpDetail";
+}
+
+<h2>EmpDetail</h2>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>All</title>
+</head>
+<body>
+    <h1>List of Employees with Us!!!!</h1>
+    
+    <hr />
+    <div>
+        <table border="1" width="100%">
+            <tr>
+                <th>EmpID</th>
+                <th>Name of emp</th>
+           <th>joining details</th>
+                <th>Date of brth</th>
+                <th>gender</th>
+                <th>nationality</th>
+                
+                <th>Mobile no.</th>
+                <th>Email ID</th>
+                <th>Address</th>
+                <th>department</th>
+                <th>designation</th>
+                <th>Gross Salary</th>
+                
+            </tr>
+            @foreach (var row in Model)
+            {
+        <tr>
+            <td>@row.EmpID</td>
+            <td>@row.Name</td>
+           <td>@row.Joining_Date</td>
+            <td>@row.DOB</td>
+            <td>@row.Gender</td>
+            <td>@row.Nationality</td>
+           
+            <td>@row.Mobile</td>
+            <td>@row.Email</td>
+            <td>@row.Address</td>
+            <td>@row.Department</td>
+            <td>@row.Designation</td>
+            <td>@row.Gross_Salary</td>
+            
+            <td>@Html.ActionLink("View Deductions", "Deduction", new { id = row.EmpID })</td>
+            <td>@Html.ActionLink("View Allowances", "Allowance", new { id = row.EmpID })</td>
+            <td>@Html.ActionLink("Show Payslip", "showPaySlip", new { id = row.EmpID })</td>
+        </tr>
+            }
+        </table>
+    </div>
+</body>
+</html>
+
+
+
+

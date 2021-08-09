@@ -1,0 +1,62 @@
+﻿@model ERP.Models.SignUpDetails
+@{
+    ViewBag.Title = "Login";
+}
+
+<html>
+<head>
+
+    <link href="~/Content/Home/Login.css" rel="stylesheet" />
+
+</head>
+<body style="background-image: url(../image/loginbg.jpeg);background-size:cover">
+    <center>
+        <section class="form-26">
+
+            <div class="display-ad" style=" margin: 8px auto; display: block; text-align: center;">
+
+
+            </div>
+
+            <div class="form-26-mian">
+                <div class="layer">
+                    <div class="wrapper">
+                        <div class="form-inner-cont">
+                            <div class="forms-26-info">
+                                <h2>Login</h2>
+                                <br /><br />
+                            </div>
+                            <div class="form-right-inf">
+                                <form action="~/HRM/Index" method="post" class="signin-form" wtx-context="154A346A-6F67-478B-8FCB-1151E8F0E137">
+                                    <div class="forms-gds">
+                                        <div class="form-input">
+                                            @*@Html.EditorFor(model => model.email, new { @class = "form-control", @placeholder = "Email" })*@
+                                            <input type="email" name="" placeholder="Email" required="" wtx-context="5A02AF1E-964D-4F9B-8C56-B134CD4B3501">
+                                        </div>
+                                        <div class="form-input">
+                                             @*@Html.EditorFor(model => model.password, new { @class = "form-control" ,@placeholder="Password"})*@
+                                            <input type="password" name="" placeholder="Password" required="" wtx-context="40369450-99B8-43E0-8107-64E173B27255">
+                                        </div>
+                                        <div class="form-input"><button class="btn">Login</button></div>
+                                    </div>
+                                    <h6 class="already">
+                                        Dont have an account? <a href="../Home/SignUp">
+                                            <span>
+                                                Register
+                                                Here<span></span>
+                                            </span>
+                                        </a>
+                                    </h6>
+                                </form>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+    </center>
+</body>
+</html>

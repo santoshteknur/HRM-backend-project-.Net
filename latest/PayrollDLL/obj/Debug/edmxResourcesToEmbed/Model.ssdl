@@ -1,0 +1,172 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="payrollModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'payroll.dbo.allowance' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="allowance">
+    <Key>
+      <PropertyRef Name="EmpClassID" />
+      <PropertyRef Name="HouseAllowance" />
+      <PropertyRef Name="ConveyanceAllowance" />
+      <PropertyRef Name="MedicalAllowance" />
+      <PropertyRef Name="StatutoryBonus" />
+      <PropertyRef Name="SupplementaryAllowance" />
+    </Key>
+    <Property Name="EmpClassID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="HouseAllowance" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="ConveyanceAllowance" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="MedicalAllowance" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="StatutoryBonus" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="SupplementaryAllowance" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'payroll.dbo.Deductions' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Deductions">
+    <Key>
+      <PropertyRef Name="EmpClassID" />
+      <PropertyRef Name="MedicalPremium" />
+      <PropertyRef Name="ProvidentFund" />
+      <PropertyRef Name="ProfessionalTax" />
+    </Key>
+    <Property Name="EmpClassID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="MedicalPremium" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="ProvidentFund" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="ProfessionalTax" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="AttendenceDeductions" Type="numeric" Precision="18" Scale="0" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'payroll.dbo.EmpClass' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="EmpClass">
+    <Key>
+      <PropertyRef Name="EmpClassID" />
+      <PropertyRef Name="EmpClass" />
+      <PropertyRef Name="ClassSalary" />
+    </Key>
+    <Property Name="EmpClassID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="EmpClass" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ClassSalary" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+  </EntityType>
+  <EntityType Name="EmpPayroll">
+    <Key>
+      <PropertyRef Name="EmpID" />
+    </Key>
+    <Property Name="EmpID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Father_Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Mother_Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="DOB" Type="date" Nullable="false" />
+    <Property Name="Gender" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="Nationality" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Maritual_Status" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="Mobile" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Present_Address" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Permanent_Address" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Designation" Type="nvarchar" MaxLength="50" />
+    <Property Name="Gross_Salary" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="Attendence_Status" Type="nchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PayrollMain">
+    <Key>
+      <PropertyRef Name="EmpClassID" />
+    </Key>
+    <Property Name="EmpID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="EmpClassID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="EmpClass" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Designation" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Password" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_allowance_PayrollMain">
+    <End Role="PayrollMain" Type="Self.PayrollMain" Multiplicity="1" />
+    <End Role="allowance" Type="Self.allowance" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PayrollMain">
+        <PropertyRef Name="EmpClassID" />
+      </Principal>
+      <Dependent Role="allowance">
+        <PropertyRef Name="EmpClassID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Deductions_PayrollMain">
+    <End Role="PayrollMain" Type="Self.PayrollMain" Multiplicity="1" />
+    <End Role="Deductions" Type="Self.Deductions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PayrollMain">
+        <PropertyRef Name="EmpClassID" />
+      </Principal>
+      <Dependent Role="Deductions">
+        <PropertyRef Name="EmpClassID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EmpClass_PayrollMain">
+    <End Role="PayrollMain" Type="Self.PayrollMain" Multiplicity="1" />
+    <End Role="EmpClass" Type="Self.EmpClass" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PayrollMain">
+        <PropertyRef Name="EmpClassID" />
+      </Principal>
+      <Dependent Role="EmpClass">
+        <PropertyRef Name="EmpClassID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PayrollMain_EmpPayroll">
+    <End Role="EmpPayroll" Type="Self.EmpPayroll" Multiplicity="1" />
+    <End Role="PayrollMain" Type="Self.PayrollMain" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EmpPayroll">
+        <PropertyRef Name="EmpID" />
+      </Principal>
+      <Dependent Role="PayrollMain">
+        <PropertyRef Name="EmpID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="payrollModelStoreContainer">
+    <EntitySet Name="EmpPayroll" EntityType="Self.EmpPayroll" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PayrollMain" EntityType="Self.PayrollMain" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="allowance" EntityType="Self.allowance" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [allowance].[EmpClassID] AS [EmpClassID], 
+    [allowance].[HouseAllowance] AS [HouseAllowance], 
+    [allowance].[ConveyanceAllowance] AS [ConveyanceAllowance], 
+    [allowance].[MedicalAllowance] AS [MedicalAllowance], 
+    [allowance].[StatutoryBonus] AS [StatutoryBonus], 
+    [allowance].[SupplementaryAllowance] AS [SupplementaryAllowance]
+    FROM [dbo].[allowance] AS [allowance]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Deductions" EntityType="Self.Deductions" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Deductions].[EmpClassID] AS [EmpClassID], 
+    [Deductions].[MedicalPremium] AS [MedicalPremium], 
+    [Deductions].[ProvidentFund] AS [ProvidentFund], 
+    [Deductions].[ProfessionalTax] AS [ProfessionalTax], 
+    [Deductions].[AttendenceDeductions] AS [AttendenceDeductions]
+    FROM [dbo].[Deductions] AS [Deductions]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="EmpClass" EntityType="Self.EmpClass" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [EmpClass].[EmpClassID] AS [EmpClassID], 
+    [EmpClass].[EmpClass] AS [EmpClass], 
+    [EmpClass].[ClassSalary] AS [ClassSalary]
+    FROM [dbo].[EmpClass] AS [EmpClass]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_allowance_PayrollMain" Association="Self.FK_allowance_PayrollMain">
+      <End Role="PayrollMain" EntitySet="PayrollMain" />
+      <End Role="allowance" EntitySet="allowance" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Deductions_PayrollMain" Association="Self.FK_Deductions_PayrollMain">
+      <End Role="PayrollMain" EntitySet="PayrollMain" />
+      <End Role="Deductions" EntitySet="Deductions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EmpClass_PayrollMain" Association="Self.FK_EmpClass_PayrollMain">
+      <End Role="PayrollMain" EntitySet="PayrollMain" />
+      <End Role="EmpClass" EntitySet="EmpClass" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PayrollMain_EmpPayroll" Association="Self.FK_PayrollMain_EmpPayroll">
+      <End Role="EmpPayroll" EntitySet="EmpPayroll" />
+      <End Role="PayrollMain" EntitySet="PayrollMain" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

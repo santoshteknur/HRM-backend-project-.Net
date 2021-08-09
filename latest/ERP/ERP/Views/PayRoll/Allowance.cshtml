@@ -1,0 +1,41 @@
+﻿@model ERP.Models.Allowance
+@{
+    ViewBag.Title = "Allowance";
+}
+    <html>
+    <body>
+        <h2>Allowance</h2>
+        <p>
+            @Html.ActionLink("Go to main", "EmpDetail")
+        </p>
+        <div>
+            <table border="1" width="100%">
+                <tr>
+                    <th>EmpID</th>
+                    <th>House Allowance</th>
+                    <th>Conveyance Allowance</th>
+                    <th>Medical Allowance</th>
+                    <th>Statutory Bonus</th>
+                    <th>Supplementary Allowance</th>
+
+                </tr>
+
+
+                <tr>
+                    <td>@Model.EmpID</td>
+                    <td>@Model.HouseAllowance</td>
+                    <td>@Model.ConveyanceAllowance</td>
+                    <td>@Model.MedicalAllowance</td>
+                    <td>@Model.StatutoryBonus</td>
+                    <td>@Model.SupplementaryAllowance</td>
+
+
+
+                </tr>
+
+            </table>
+        </div>
+    </body>
+    </html>
+
+

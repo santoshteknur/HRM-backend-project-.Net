@@ -1,0 +1,76 @@
+﻿
+@{
+    ViewBag.Title = "EmployeeAttendance";
+}
+<!-- Icons font CSS-->
+
+<link href="~/Content/HRM/vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" />
+<link href="~/Content/HRM/vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" />
+
+<!-- Vendor CSS-->
+<link href="~/Content/HRM/vendor/select2/select2.min.css" rel="stylesheet" />
+
+<link href="~/Content/HRM/vendor/datepicker/daterangepicker.css" rel="stylesheet" />
+<script src="~/Content/HRM/vendor/datepicker/daterangepicker.js"></script>
+
+<!-- Main CSS-->
+
+<link href="~/Content/HRM/css/main.css" rel="stylesheet" />
+@using (Html.BeginForm())
+{
+    <div class="page-wrapper bg-blue p-t-100 p-b-100 font-robo">
+        <div class="wrapper wrapper--w680">
+            <div class="card card-1">
+                <div class="card-heading"></div>
+                <div class="card-body">
+                    <h1 class="title" style="text-align:center">Employee Attendance</h1>
+                    <form method="POST">
+                        <div class="input-group">
+                          
+                            <input class="input--style-1" type="text" placeholder="Attendance Id" name="AttendanceId">
+                        </div>
+                        <div class="input-group">
+                            <input class="input--style-1" type="text" placeholder="Department Name" name="Department Name">
+                        </div>
+                        <div class="input-group">
+                            <input class="input--style-1" type="text" placeholder="Employeee Name" name="Employeee Name">
+                        </div>
+                        <div class="input-group">
+                            <input class="" type="date" placeholder="Date" name="Date">
+                            
+                        </div>
+                        <div class="input-group">
+                            <input class="input--style-1" type="number" placeholder="Present Days" name="Present Days">
+                            
+                        </div>
+                        <div class="input-group">
+                            <input class="input--style-1" type="number" placeholder="Absent Days" name="Absent Days">
+                            
+                        </div>
+                        <div class="input-group">
+                            <input class="input--style-1" type="number" placeholder="Half Days" name="Half Days">
+                            
+                        </div>
+
+                        <div class="p-t-20">
+                            <button class="btn btn--radius btn--green" type="submit">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Jquery JS-->
+
+    <script src="~/Content/HRM/vendor/jquery/jquery.min.js"></script>
+    <!-- Vendor JS-->
+    <script src="~/Content/HRM/vendor/select2/select2.min.js"></script>
+
+    <script src="~/Content/HRM/vendor/datepicker/moment.min.js"></script>
+
+    <script src="~/Content/HRM/vendor/datepicker/daterangepicker.js"></script>
+
+    <!-- Main JS-->
+    <script src="js/global.js"></script>
+}
+

@@ -1,0 +1,60 @@
+﻿@model System.Data.DataTable
+@{
+    ViewBag.Title = "Index";
+}
+
+<h3>Employee Performance List</h3>
+<hr />
+<table>
+    <tr>
+        <th>EmpID</th>
+        <th>Name</th>
+        <th>Designation</th>
+        <th>Workingdays</th>
+        <th>Present</th>
+        <th>Performance</th>
+        <th>Options</th>
+    </tr>
+    @for (int i = 0; i < Model.Rows.Count; i++)
+    {
+        <tr>
+            <td>@Model.Rows[i][0]</td>
+            <td>@Model.Rows[i][1]</td>
+            <td>@Model.Rows[i][2]</td>
+            <td>@Model.Rows[i][3]</td>
+            <td>@Model.Rows[i][4]</td>
+            <td>@Model.Rows[i][5]</td>
+            <td>
+                <a href="@Url.Action("Edit","Performance", new { @id = Model.Rows[i][0] })">Edit</a> |
+                <a href="@Url.Action("Delete","Performance", new { @id = Model.Rows[i][0] })">Delete</a>
+            </td>
+        </tr>
+    }
+</table>
+<hr />
+<a href="@Url.Action("Create","Performance")">Add Employee Performance</a>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+@Html.ActionLink("Print", "Print", new { @class = "btn-btn-primary" })
+<style type="text/css">
+    table {
+        border-collapse: collapse;
+        width: 100%;
+       
+    }
+
+    th, tr, td {
+        padding: 8px;
+        text-align: center;
+        border: 1px solid black;
+    }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+    h3 {
+        text-align: center;
+    }
+</style>
+
+
+

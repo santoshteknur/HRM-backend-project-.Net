@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="payrollModelStoreContainer" CdmEntityContainer="payrollEntities">
+    <EntitySetMapping Name="EmpPayrolls">
+      <EntityTypeMapping TypeName="payrollModel.EmpPayroll">
+        <MappingFragment StoreEntitySet="EmpPayroll">
+          <ScalarProperty Name="EmpID" ColumnName="EmpID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Father_Name" ColumnName="Father_Name" />
+          <ScalarProperty Name="Mother_Name" ColumnName="Mother_Name" />
+          <ScalarProperty Name="DOB" ColumnName="DOB" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Nationality" ColumnName="Nationality" />
+          <ScalarProperty Name="Maritual_Status" ColumnName="Maritual_Status" />
+          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Present_Address" ColumnName="Present_Address" />
+          <ScalarProperty Name="Permanent_Address" ColumnName="Permanent_Address" />
+          <ScalarProperty Name="Designation" ColumnName="Designation" />
+          <ScalarProperty Name="Gross_Salary" ColumnName="Gross_Salary" />
+          <ScalarProperty Name="Attendence_Status" ColumnName="Attendence_Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PayrollMains">
+      <EntityTypeMapping TypeName="payrollModel.PayrollMain">
+        <MappingFragment StoreEntitySet="PayrollMain">
+          <ScalarProperty Name="EmpID" ColumnName="EmpID" />
+          <ScalarProperty Name="EmpClassID" ColumnName="EmpClassID" />
+          <ScalarProperty Name="EmpClass" ColumnName="EmpClass" />
+          <ScalarProperty Name="Designation" ColumnName="Designation" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="allowances">
+      <EntityTypeMapping TypeName="payrollModel.allowance">
+        <MappingFragment StoreEntitySet="allowance">
+          <ScalarProperty Name="EmpClassID" ColumnName="EmpClassID" />
+          <ScalarProperty Name="HouseAllowance" ColumnName="HouseAllowance" />
+          <ScalarProperty Name="ConveyanceAllowance" ColumnName="ConveyanceAllowance" />
+          <ScalarProperty Name="MedicalAllowance" ColumnName="MedicalAllowance" />
+          <ScalarProperty Name="StatutoryBonus" ColumnName="StatutoryBonus" />
+          <ScalarProperty Name="SupplementaryAllowance" ColumnName="SupplementaryAllowance" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Deductions">
+      <EntityTypeMapping TypeName="payrollModel.Deduction">
+        <MappingFragment StoreEntitySet="Deductions">
+          <ScalarProperty Name="AttendenceDeductions" ColumnName="AttendenceDeductions" />
+          <ScalarProperty Name="EmpClassID" ColumnName="EmpClassID" />
+          <ScalarProperty Name="MedicalPremium" ColumnName="MedicalPremium" />
+          <ScalarProperty Name="ProvidentFund" ColumnName="ProvidentFund" />
+          <ScalarProperty Name="ProfessionalTax" ColumnName="ProfessionalTax" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EmpClasses">
+      <EntityTypeMapping TypeName="payrollModel.EmpClass">
+        <MappingFragment StoreEntitySet="EmpClass">
+          <ScalarProperty Name="EmpClassID" ColumnName="EmpClassID" />
+          <ScalarProperty Name="EmpClass1" ColumnName="EmpClass" />
+          <ScalarProperty Name="ClassSalary" ColumnName="ClassSalary" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

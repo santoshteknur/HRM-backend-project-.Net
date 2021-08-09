@@ -1,0 +1,118 @@
+﻿@model ERP.Models.Employee
+
+@{
+    ViewBag.Title = "Details_New";
+}
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+<style>
+    body {
+        background-color: #faebd7;
+        background-size: cover;
+    }
+</style>
+<h2 style="text-align:center">Details of Employee</h2>
+
+<br />
+<div class="row">
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4" style="border:1px solid black;border-radius:25px">
+        <br />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Name) &emsp; &emsp; &nbsp;&nbsp;
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Name)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Joining_Date)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Joining_Date)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.DOB)&emsp; &emsp; &emsp;&nbsp;&nbsp;
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.DOB)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Gender)&emsp; &emsp; &ensp;
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Gender)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Nationality)&emsp;&nbsp;
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Nationality)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Mobile)&emsp; &emsp;&emsp;
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Mobile)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Email)&emsp; &emsp; &emsp;&nbsp;
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Email)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Address)&emsp; &emsp;&nbsp;
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Address)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Department)&emsp;&nbsp;
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Department)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Designation)&emsp;
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Designation)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Gross_Salary)&ensp;
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Gross_Salary)
+            </dd>
+
+        </dl>
+    </div>
+    <div class="col-sm-4"></div>
+
+</div>
+<br/>
+<p style="text-align:center;font-size:20px">
+    @Html.ActionLink("Edit", "Edit", new { id = Model.EmpID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

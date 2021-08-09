@@ -1,0 +1,83 @@
+﻿
+@{
+    ViewBag.Title = "EmployeeLeave";
+}
+
+<!-- Icons font CSS-->
+
+<link href="~/Content/HRM/vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" />
+<link href="~/Content/HRM/vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" />
+
+<!-- Vendor CSS-->
+<link href="~/Content/HRM/vendor/select2/select2.min.css" rel="stylesheet" />
+
+<link href="~/Content/HRM/vendor/datepicker/daterangepicker.css" rel="stylesheet" />
+<script src="~/Content/HRM/vendor/datepicker/daterangepicker.js"></script>
+
+<!-- Main CSS-->
+<style>
+    body {
+    /*background-image: url('../../../image/HRM/empattn.jpg');*/
+    /*background-image: url('../../../image/HRM/empattendance.jpg');*/
+    background-image: url('../../../image/WhatsApp Image 2019-12-14 at 5.04.51 PM (1).jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+</style>
+<link href="~/Content/HRM/css/leave.css" rel="stylesheet" />
+@using (Html.BeginForm())
+{
+    <div class="page-wrapper bg-blue p-t-100 p-b-100 font-robo">
+        <div class="wrapper wrapper--w680">
+            <div class="card card-1">
+                <div class="card-heading"></div>
+                <div class="card-body">
+                    <h1 class="title" style="text-align:center">Leave Application</h1>
+                    <form method="POST">
+                        <div class="input-group">
+
+                            <input class="input--style-1" type="text" placeholder="Leave Id" name="LeaveId">
+                        </div>
+                        <div class="input-group">
+                            <input class="input--style-1" type="text" placeholder="Employee Name" name="EmployeeName">
+                        </div>
+                        <div class="input-group">
+                            <input class="input--style-1" type="date" placeholder="Leave From" name="LeaveFrom">
+                        </div>
+                        <div class="input-group">
+                            <input class="" type="date" placeholder="Leave To" name="LeaveTo">
+
+                        </div>
+                        <div class="input-group">
+                            <input class="input--style-1" type="text" placeholder="Reason" name="Reason">
+
+                        </div>
+                        <div class="input-group">
+                            <input class="input--style-1" type="text" placeholder="Work Status" name="Work Status">
+
+                        </div>
+            
+
+                        <div class="p-t-20">
+                            <button class="btn btn--radius btn--green" type="submit">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Jquery JS-->
+
+    <script src="~/Content/HRM/vendor/jquery/jquery.min.js"></script>
+    <!-- Vendor JS-->
+    <script src="~/Content/HRM/vendor/select2/select2.min.js"></script>
+
+    <script src="~/Content/HRM/vendor/datepicker/moment.min.js"></script>
+
+    <script src="~/Content/HRM/vendor/datepicker/daterangepicker.js"></script>
+
+    <!-- Main JS-->
+    <script src="js/global.js"></script>
+}
+
+

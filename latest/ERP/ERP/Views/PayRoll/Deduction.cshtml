@@ -1,0 +1,37 @@
+﻿@model ERP.Models.Deduction
+@{
+    ViewBag.Title = "Deduction";
+}
+<html>
+<body>
+<h2>Deduction</h2>
+    <p>
+        @Html.ActionLink("Go to main","EmpDetail")
+    </p>
+<div>
+    <table border="1" width="100%">
+        <tr>
+            <th>EmpID</th>
+            <th>Medical Premium</th>
+            <th>Provident Fund</th>
+            <th>Professional Tax</th>
+            <th>Attendence Deductions</th>
+            
+        </tr>
+        
+        
+            <tr>
+                <td>@Model.EmpID</td>
+                <td>@Model.MedicalPremium</td>
+                <td>@Model.ProvidentFund</td>
+                <td>@Model.ProfessionalTax</td>
+                <td>@Model.AttendanceDeduction</td>
+                
+                
+
+            </tr>
+        
+    </table>
+</div>
+    </body>
+</html>

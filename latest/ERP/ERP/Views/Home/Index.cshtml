@@ -1,0 +1,478 @@
+﻿<html>
+<head>
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <script src="~/Scripts/bootstrap.min.js"></script>
+
+    <link href="~/Content/Home/Index.css" rel="stylesheet" />
+    <link href="~/Content/Home/MainPage/Animate.css" rel="stylesheet" />
+    <link href="~/Content/Home/MainPage/Flexslider.css" rel="stylesheet" />
+    <link href="~/Content/Home/MainPage/Home.css" rel="stylesheet" />
+    <link href="~/Content/Home/MainPage/ICommon.css" rel="stylesheet" />
+    <link href="~/Content/owl.carousel.min.css" rel="stylesheet" />
+    <link href="~/Content/owl.theme.default.min.css" rel="stylesheet" />
+    <link href="~/Content/w3.css" rel="stylesheet" />
+
+    <style>
+        .mySlides {
+            display: none
+        }
+
+        .w3-tag, .fa {
+            cursor: pointer
+        }
+
+        .w3-tag {
+            height: 15px;
+            width: 15px;
+            padding: 0;
+            margin-top: 6px
+        }
+    </style>
+    <script>
+        // Slideshow
+        var slideIndex = 1;
+        showDivs(slideIndex);
+
+        function plusDivs(n) {
+            showDivs(slideIndex += n);
+        }
+
+        function currentDiv(n) {
+            showDivs(slideIndex = n);
+        }
+
+        function showDivs(n) {
+            var i;
+            var x = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("demodots");
+            if (n > x.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = x.length };
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" w3-white", "");
+            }
+            x[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " w3-white";
+        }
+    </script>
+    <style>
+        /* Style the navbar */
+        #navbar {
+            overflow: hidden;
+            background-color: #333;
+            /*position: fixed;*/
+        }
+
+            /* Navbar links */
+            #navbar a {
+                float: left;
+                display: block;
+                color: #f2f2f2;
+                text-align: center;
+                padding: 14px;
+                text-decoration: none;
+            }
+
+        /* Page content */
+        .content {
+            padding: 16px;
+        }
+
+        /* The sticky class is added to the navbar with JS when it reaches its scroll position */
+        .sticky {
+            position: fixed;
+            top: 0;
+            width: 100%;
+        }
+
+            /* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
+            .sticky + .content {
+                padding-top: 60px;
+            }
+    </style>
+   
+</head>
+<body>
+    <div>
+        <div id="navbar" class="navbar-fixed-top" style="height:75px">
+            <a class="navbar-brand">
+                <img src="~/image/HRM/hr/hrmslogo.jpg" style="height: 73px;margin: -13px;width: 155px;" alt="HRM"     />
+            </a>
+            <a href="#" style="margin-top: 10px;">Home</a>
+            <a href="#dvaboutus" style="margin-top: 10px;">About</a>
+            <a href="#contactdv" style="margin-top: 10px;">Contact</a>
+            <a href="../Home/Login" style="margin-top: 10px;">Login</a>
+            <a href="../Home/SignUp" style="margin-top: 10px;">SignUp</a>
+        </div>
+        <br /><br />
+
+
+              <div class="">
+                  <div class="w3-display-container mySlides" style="display:block">
+                      <img src="~/image/Homepic/image1.jpg" style="width:100%;overflow-x:scroll;" />
+                      <div class="w3-display-middle w3-container w3-padding-32" style="color:white !important;background-color:none !important">
+                          <span class=""><marquee style="font-size:25px"><b>Human resource management is the strategic approach to the effective management of people in a company or organization such that they help their business gain a competitive advantage.</b></marquee></span>
+                      </div>
+                  </div>
+                  <div class="w3-display-container mySlides">
+                      <img src="~/image/Homepic/image2.jpg" style="width:100%;overflow-x:scroll;" />
+                      <div class="w3-display-middle w3-container w3-padding-32" style="color:white !important;background-color:none !important">
+                          <span class=""></span>
+                      </div>
+                  </div>
+                  <div class="w3-display-container mySlides">
+                      <img src="~/image/slide2.jpeg" style="        width: 100%;
+        overflow-x: scroll;
+" />
+                      <div class="w3-display-middle w3-container w3-padding-32" style="color:white !important;background-color:none !important">
+                         
+                      </div>
+                  </div>
+
+                  <!-- Slideshow next/previous buttons -->
+                  <div class="w3-container w3-dark-grey w3-padding w3-xlarge">
+                      <div class="w3-left" onclick="plusDivs(-1)"><i class="fa fa-arrow-circle-left w3-hover-text-teal"></i></div>
+                      <div class="w3-right" onclick="plusDivs(1)"><i class="fa fa-arrow-circle-right w3-hover-text-teal"></i></div>
+
+                      <div class="w3-center">
+                          <span class="w3-tag demodots w3-border w3-transparent w3-hover-white" onclick="currentDiv(1)"></span>
+                          <span class="w3-tag demodots w3-border w3-transparent w3-hover-white" onclick="currentDiv(2)"></span>
+                          <span class="w3-tag demodots w3-border w3-transparent w3-hover-white" onclick="currentDiv(3)"></span>
+                      </div>
+                  </div>
+              </div>
+
+
+        <br /><br />
+        <div id="fh5co-services-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-9 col-sm-offset-2 text-center fh5co-heading animate-box">
+                        <h2 style="text-align:center">Key Features</h2>
+                        <p>Human resource management is the strategic approach to the effective management of people in a company or organization such that they help their business gain a competitive advantage. It is designed to maximize employee performance in service of an employer's strategic objectives.</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-4 animate-box">
+                        <div class="services">
+                            <div class="desc">
+                                <img src="~/image/icon/feature-icon-a.png" style="width: 24%;" />
+                                <h3>Improved Employee Engagement</h3>
+                                <p>An engaged employee is a productive employee. With this in mind, it is easy to see how features such as employee Self Service, timely and accurate payroll management, improved leave and attendance management, etc., feed into the organization’s goals by keeping employees engaged and thus ensuring a more productive workforce.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 animate-box">
+                        <div class="services">
+
+                            <div class="desc">
+                                <img src="~/image/icon/feature-icon-k.png" style="width: 24%;" />
+                                <h3>Efficiency and Cost Effectiveness</h3>
+                                <p>Modern HRMS come at highly cost-effective price points. The cost benefits you stand to reap from their use far outweigh the meager investment involved in procuring them.Additionally, the duplication of information is avoided, thus saving time and improving the efficiency of the department.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 animate-box">
+                        <div class="services">
+
+
+                            <div class="desc">
+                                <img src="~/image/icon/feature-icon-l.png" style="width:24%" />
+                                <h3>Employee Self Service</h3>
+                                <p>
+                                    Employee Self Service refers to an information suite that is available to employees in one central hub.They can now view/download their payslips, view leave updates and real-time attendance data and their tax liabilities for the month or year without the need to approach HR.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-4 animate-box">
+                        <div class="services">
+
+                            <div class="desc">
+                                <img src="~/image/icon/feature-icon-i.png" style="        width: 24%
+" />
+                                <h3>Data Management</h3>
+                                <p>HR data is some of the most sensitive data available within an organization.The answer to all the above problems came in the form of HRMS, which is, first and foremost, paperless and hence eliminates the problem of being misplaced or incomplete, among others.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 animate-box">
+                        <div class="services">
+
+                            <div class="desc">
+                                <img src="~/image/icon/feature-icon-f.png" style="width:24%" />
+                                <h3>Accessible Anywhere</h3>
+                                <p>Use our HRM solutions from any location or device. Thus, working while traveling is both easy and simple.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 animate-box">
+                        <div class="services">
+
+                            <div class="desc">
+                                <img src="~/image/icon/feature-icon-h.png" style="width:24%" />
+                                <h3>Responsive</h3>
+                                <p>Our services are provided by incredibly powerful servers which mean you will rarely face performance issues.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br /><br />
+        <div id="fh5co-work-section" class="fh5co-light-grey-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-md-offset-3 text-center fh5co-heading animate-box">
+                        <h2>Features</h2>
+                        <p>It has been our endeavor to meet different requirements of each user and develop user-friendly software covering the entire operations of a company. </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4 animate-box">
+                        <a href="~/Home/Login" class="item-grid text-center">
+                            <div class="image" style="background-image: url(../image/features/Security.jpeg) "></div>
+                            <div class="v-align">
+                                <div class="v-align-middle">
+                                    <h3 class="title">Security</h3>
+                                    <h5 class="category">
+                                        @*Multi-level Security and Auto Backup |
+                                        Warning for Delays |
+                                        Alerts Mailing System |
+                                        Authorization of Vendor Orders |
+                                        Drill Down on Production Orders <br><br><br><br>*@
+                                    </h5>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-4 animate-box">
+                        <a href="~/Home/Login" class="item-grid text-center">
+                            <div class="image" style="background-image: url('../../image/attendance-management-system.png');
+"></div>
+                            <div class="v-align">
+                                <div class="v-align-middle">
+                                    <h3 class="title">Attendance Management</h3>
+                                    <h5 class="category">
+                                        @*Request for Quotation |
+                                        Create Purchase Order |
+                                        Pre-production Scheduling |
+                                        Purchase Invoice / Bill |
+                                        Give Feedback
+                                        <br><br><br><br><br />*@
+                                    </h5>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-4 animate-box">
+                        <a href="~/Home/Login" class="item-grid text-center">
+                            <div class="image" style="background-image: url(../image/features/hrm.jpg)"></div>
+                            <div class="v-align">
+                                <div class="v-align-middle">
+                                    <h3 class="title">Employee Management</h3>
+                                    <h5 class="category">
+                                        @*Maintain Employee List |
+                                        Add/Delete Employee |
+                                        Edit/Update Employee Records |
+                                        Details of Employee |
+                                        <br><br><br><br><br />*@
+                                    </h5>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-4 animate-box">
+                        <a href="~/Home/Login" class="item-grid text-center">
+                            <div class="image" style="background-image: url(../image/features/Sales.jpeg)"></div>
+                            <div class="v-align">
+                                <div class="v-align-middle">
+                                    <h3 class="title">Performance Measuring</h3>
+                                    <h5 class="category">
+                                        @*Create Sales Quotation  |
+                                        Sales Order |
+                                        Sales Invoice / Bill |
+                                        Customer Fee<br><br><br><br><br>*@
+                                    </h5>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-4 animate-box">
+                        <a href="~/Home/Login" class="item-grid text-center">
+                            <div class="image" style="background-image: url(../image/features/Accounts.jpg)"></div>
+                            <div class="v-align">
+                                <div class="v-align-middle">
+                                    <h3 class="title">PayRoll Management</h3>
+                                    <h5 class="category">
+                                        @*Allowances |
+                                        Deduction |
+                                        Show PaySlip |*@
+
+                                        
+                                    </h5>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-4 animate-box">
+                        <a href="~/Home/Login" class="item-grid text-center">
+                            
+                            <div class="image" style=" background-image: url('../../image/leavesys.png');
+"></div>
+                            <div class="v-align">
+                                <div class="v-align-middle">
+                                    <h3 class="title">Leave Management</h3>
+                                    <h5 class="category">
+                                        @*Inward Material Detail |
+                                        Maintain Stock |
+                                        Outward Material Detail |
+                                        Waste / Return Material Detail |
+                                        <br> <Br><br><br />*@
+                                    </h5>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div id="fh5co-pricing-section" style="position: relative;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-md-offset-3 text-center fh5co-heading animate-box">
+                        <h2>How HRMS will help you.</h2>
+                        <p>An HRMS aims to improve the productivity and efficiency of the business through the automation of manual and repetitive tasks. This, in turn, also frees up the HR team's time which can then be used to address more strategic, business-critical tasks.</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="pricing">
+                        <div class="col-md-3 animate-box">
+                            <div class="price-box">
+                                <h2 class="pricing-plan pricing-plan-offer">Cut Costs to <Br>Claim complete input credit</h2>
+
+                                <p>HRMS system will simplify the digitisation process whilst ensuring an appropriate database to help validate claims and returns to avert penalties. </p>
+                                <p>Keep track of all Invoices and the amount of Tax paid accurately, in order to ensure proper savings by claiming the right amount of credit. </p>
+
+                            </div>
+                        </div>
+
+
+                        <div class="col-md-3 animate-box">
+                            <div class="price-box popular">
+                                <h2 class="pricing-plan">Succession Planning<br><br></h2>
+                                <p>Succession Planning is the process where an organization identifies employees who can move into positions of higher responsibilities and constantly grooms them so that they are capable of achieving these positions.<br> </p>
+                                <br /><br />
+                            </div>
+                        </div>
+
+                        <div class="col-md-3 animate-box">
+                            <div class="price-box">
+                                <h2 class="pricing-plan">Administration and Reporting</h2>
+
+                                <p>Forget about maintaing ellaborate records and let the HRMS take over and reduce the amount of documentation that needs to be maintained. </p>
+
+                                <p>The extensive reporting capabilities of HRMS can help you generate the necessary documentation to ensure compliance. </p><br />
+                            </div>
+                        </div>
+
+
+
+                        <div class="col-md-3 animate-box">
+                            <div class="price-box">
+                                <h2 class="pricing-plan">Human Resource Development<br><br></h2>
+                                <p>A Human relations program thereby attempts at enhancing employee motivation and workplace morale through an improved three-way communications and employee participation in the decision making processes.<br /><br /><br /></p>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="fh5co-cta" style="background-image: url(images/slide_2.jpg);">
+            <div class="overlay"></div>
+            <div class="container">
+                <div class="col-md-12 text-center animate-box">
+                    <h3>We are here to help you.</h3>
+                    <p><a href="#contactdv" class="btn btn-primary btn-outline with-arrow">Get started now! <i class="icon-arrow-right"></i></a></p>
+                </div>
+            </div>
+        </div>
+
+
+        <footer id="fh5co-footer" role="contentinfo">
+
+            <div class="container" id="dvaboutus">
+                <div class="col-md-12 col-sm-12 col-sm-push-0 col-xs-12 col-xs-push-0">
+                    <center>
+                        <h3>About Us</h3>
+                        <p>
+                            A HRMS (Human Resource Management System) is a combination of systems and processes that connect human resource management and information technology through HR software.The automation of repetitive and time consuming tasks associated with human resources management frees up some of the companies most valuable employees and allows the focus to shift to culture, retention, and other highly impactful areas.
+                        </p>
+                        <p><a href="#contactdv" class="btn btn-primary btn-outline with-arrow btn-sm">Contact Us <i class="icon-arrow-right"></i></a></p>
+                    </center>
+                </div>
+
+            </div>
+
+            <div class="container" id="contactdv">
+                <div class="address row">
+                    <div class="col-lg-4 address-grid" style="border: 4px solid white;background-color:rgba(0, 0, 0, 0.7)">
+
+                        <div class="row address-info">
+                            <div class="col-md-3 address-left text-center">
+
+                                <img src="~/image/icon/address.png" />
+                            </div>
+                            <div class="col-md-9 address-right text-left">
+                                <h6 class="ad-info text-uppercase mb-2" style="color:white">Address</h6>
+                                <p>
+                                    CDAC ACTS,Bangaluru
+
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 address-grid" style="border: 4px solid white;background-color:rgba(0, 0, 0, 0.7)">
+                        <div class="row address-info">
+                            <div class="col-md-3 address-left text-center">
+
+                                <img src="~/image/icon/email-48.png" />
+
+                            </div>
+                            <div class="col-md-9 address-right text-left">
+                                <h6 class="ad-info text-uppercase mb-2" style="color:white">Email</h6>
+                                <p>
+                                    Email :
+                                    <a href="mailto:example@email.com"> cdacecity@gmail.com</a>
+                                </p>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-lg-4 address-grid" style="border: 4px solid white;background-color:rgba(0, 0, 0, 0.7)">
+                        <div class="row address-info">
+                            <div class="col-md-3 address-left text-center">
+
+                                <img src="~/image/icon/cll.png" />
+                            </div>
+                            <div class="col-md-9 address-right text-left">
+                                <h6 class="ad-info text-uppercase mb-2" style="color:white">Phone</h6>
+                                <p>+1 234 567 8901</p>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

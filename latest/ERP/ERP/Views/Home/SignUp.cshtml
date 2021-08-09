@@ -1,0 +1,79 @@
+﻿@model ERP.Models.SignUpDetails
+@{
+    ViewBag.Title = "SignIn";
+}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/Home/SignUp.css" rel="stylesheet" />
+</head>
+
+<body  style="background-image: url(../image/loginbg.jpeg);background-size:cover">
+        
+        <section class="form-26-1">
+
+            <div class="display-ad" style="margin: 8px auto; display: block; text-align:center;">
+            </div>
+
+            <div class="form-26-mian">
+                <div class="layer">
+                    <div class="wrapper">
+                        <div class="form-inner-cont">
+                            <div class="forms-26-info">
+                                <h2>Register</h2>
+                                <br />
+                            </div>
+                            <div class="form-right-inf">
+                                <form action="#" method="post" class="signin-form">
+                                    <div class="forms-gds">
+                                        <div class="form-input">
+                                            @Html.EditorFor(model=>model.firstName,new { @class="form-control",@placeholder="enter ur first name here ..."})
+                                            @*<input type="text" name="firstname" placeholder="Firstname" required />*@
+                                        </div>
+                                        <div class="form-input">
+                                            @Html.EditorFor(model => model.lastName, new { @class = "form-control",@placeholder="Lastname" })
+                                            @*<input type="text" name="lastname" placeholder="Lastname" required />*@
+                                        </div>
+                                        <div class="form-input">
+                                            @Html.EditorFor(model => model.email, new { @class = "form-control",@placeholder="Email" })
+                                            @*<input type="email" name="email" placeholder="Email" required />*@
+                                        </div>
+                                        <div class="form-input">
+                                            @Html.EditorFor(model => model.password, new { @class = "form-control" ,@placeholder="Password"})
+                                            @*<input type="password" name="password" placeholder="Password" required />*@
+                                        </div>
+                                        <div class="form-input">
+                                                @Html.EditorFor(model => model.confirm_password, new { @class = "form-control",@placeholder="Confirm Password"  })
+                                                @*<input type="password" name="password" placeholder="Confirm Password" required />*@
+        </div>
+                                        <div class="form-input">
+                                            <input type="submit" value="SignUp" ,@class="btn btn-success form-control"  style="width: 43%;
+    height: 100%;"}/>
+                                           @* <button class="btn">Signup</button>*@
+                                        </div>
+                                     </div>
+                                    <h6 class="already">
+                                        Already have an account? <a href="../Home/Login">
+                                            <span>
+                                                Login
+                                                Here<span></span>
+                                            </span>
+                                        </a>
+                                    </h6>
+                                </form>
+
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+       
+    </body>
+
+</html>
+
